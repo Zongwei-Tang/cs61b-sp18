@@ -68,7 +68,7 @@ public class LinkedListDeque <T>{
     }
 
     public T getRecursive(int index) {
-        return helper(sentinel,0,index);
+        return helper(sentinel.next,0,index);
     }
 
     private T helper(Node n,int i,int index){
