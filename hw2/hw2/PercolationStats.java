@@ -4,11 +4,11 @@ import edu.princeton.cs.introcs.StdRandom;
 import edu.princeton.cs.introcs.StdStats;
 
 public class PercolationStats {
-    double[] value;
+    private double[] value;
     public PercolationStats(int N, int T, PercolationFactory pf){
-        Percolation a=pf.make(N);
         value=new double [T];
         for (int i=0;i<T;i++) {
+            Percolation a=pf.make(N);
             while (!a.percolates()) {
                 a.open(StdRandom.uniform(0, N), StdRandom.uniform(0, N));
             }
